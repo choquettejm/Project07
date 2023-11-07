@@ -38,10 +38,9 @@ class SemesterDriver
         public int grade { get; set; }
     }
 
+
+    //private List<int> gradeList = new List<int>();
     
-
-
-
 
 
     // MAIN Method
@@ -64,6 +63,8 @@ class SemesterDriver
             currentSemester = Console.ReadLine();
         }
 
+
+
         AddCourse();
         
                
@@ -77,7 +78,7 @@ class SemesterDriver
     static void AddCourse()
     {
         List<Course> courseList = new List<Course>();
-        Course courseGrades = new Course();
+        Grades courseGrades = new Grades();
 
         int numOfGrades = 5;
         string i = "y";
@@ -110,10 +111,10 @@ class SemesterDriver
                 Console.WriteLine($"Grade item { x + 1}: ");
                 int input = Convert.ToInt32(Console.ReadLine());
 
-                       
-                AddGrades(input);
+               AddGrades(input);
 
             }
+
 
 
             Console.WriteLine("Do you have another course to enter? (y/n)");
@@ -135,10 +136,9 @@ class SemesterDriver
 
     static void AddGrades(int input)
     {
-        List<Grades> gradeList = new List<Grades>();
-
-        Grades grade = new Grades { grade = input };
-        gradeList.Add(grade);
+        List<int> gradeList = new List<int>();
+        
+        gradeList.Add(input);
 
         //Console.WriteLine("");
         //gradeList.ForEach(element => Console.Write($"{element} "));
@@ -147,16 +147,18 @@ class SemesterDriver
 
     }
 
+        
+    public string ToGradeString()
+    {
+        List<int> gradeList = new List<int>();
 
-    //public override string ToString(string gradeString)
-    //{
-    //    StringBuilder gradesString = new StringBuilder();
-    //    foreach (int grade in gradesString)
-    //    {
-    //        gradesString.AppendLine("Grade: " + grade);
-    //    }
-    //    return gradesString.ToString();
-    //}
+        StringBuilder gradesString = new StringBuilder();
+        foreach (int grade in gradeList)
+        {
+            gradesString.AppendLine("Grade: " + grade);
+        }
+        return gradesString.ToString();
+    }
 
 
 

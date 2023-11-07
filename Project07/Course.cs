@@ -39,10 +39,12 @@ namespace Project07
     //}
 
 
-    //private List<int> grades = new List<int>();
-    //public void AddGrade(int grade)
+    
+    //public void AddGrade(int input)
     //{
-    //    grades.Add(grade);
+    //    List<int> gradeList = new List<int>();
+
+    //    gradeList.Add(input);
     //}
 
 
