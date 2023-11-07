@@ -30,12 +30,15 @@ public class Program
         Console.WriteLine();
         Console.WriteLine("Student: " + studentName);
         Console.WriteLine("Semester: " + semester);
+        Console.WriteLine("==========================");
 
         foreach (Course course in courses)
         {
             Console.WriteLine();
             Console.WriteLine(course.courseDept.ToUpper() + " " + course.courseNum + "-" + course.courseSec);
-            Console.WriteLine("Grades: " + string.Join(", ", course.grades) + " (Average: " + CalculateAverage(course.grades) + "%)");
+            Console.WriteLine("Grades: " + string.Join(", ", course.grades));
+            Console.WriteLine("Average: " + CalcAverage(course.grades) + "%");
+            Console.WriteLine("-------------------------------");
         }
     }
 
@@ -58,13 +61,14 @@ public class Program
         {
             Console.WriteLine("Enter grade " + i + ":");
             int grade = Convert.ToInt32(Console.ReadLine());
-            course.grades.Add(grade);
+            course.AddGrade(grade);
+            //course.grades.Add(grade);
         }
 
         return course;
     }
 
-    public static double CalculateAverage(List<int> grades)
+    public static double CalcAverage(List<int> grades)
     {
         if (grades.Count == 0)
         {

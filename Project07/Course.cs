@@ -10,7 +10,6 @@ namespace Project07
 
     public class Course
     {
-        //public string Name { get; set; }
         public string courseDept { get; set; }
         public int courseNum { get; set; }
         public int courseSec { get; set; }
@@ -18,31 +17,24 @@ namespace Project07
 
         public Course(string department, int number, int section)
         {
-            //Name = name;
             courseDept = department;
             courseNum = number;
             courseSec = section;
             grades = new List<int>();
         }
 
-
-
-        //public void AddGrade(int input)
-        //{
-        //    List<int> gradeList = new List<int>();
-
-        //    gradeList.Add(input);
-        //}
+        public void AddGrade(int input)
+        {
+            grades.Add(input);
+        }
 
 
 
-        //private List<int> grades = new List<int>();
-
-        //private double CalcAverage()
+        //public static double CalcAverage(List<int> grades)
         //{
         //    if (grades.Count == 0)
         //    {
-        //        return 0; // Return 0 if the grades List is empty to avoid division by zero
+        //        return 0;
         //    }
 
         //    int sum = 0;
@@ -52,7 +44,7 @@ namespace Project07
         //    }
 
         //    double average = (double)sum / grades.Count;
-        //    return average;
+        //    return Math.Round(average, 1);
         //}
 
 
@@ -65,33 +57,6 @@ namespace Project07
         //    }
         //    return gradesString.ToString();
         //}
-
-
-
-
-
-
-
-
-        //    }
-
-        //    public void ToString(string studentName, string currentSemester, string Department, int courseNum, int courseSec)
-        //    {
-        //        Console.WriteLine("");
-        //        Console.WriteLine("Student: " + studentName);
-        //        Console.WriteLine("Semester: " + currentSemester);
-        //        Console.WriteLine("================================");
-        //        Console.WriteLine("Course: " + Department.ToUpper() + " " + courseNum + "-" + courseSec);
-        //        Console.Write("Grades: ");
-        //        grades.ForEach(element => Console.Write($"{element} "));
-        //        Console.WriteLine("Average: " + grades.Average());
-        //        Console.WriteLine("-------------------------------");
-
-
-        //    }
-
-
-
 
     }
 }
