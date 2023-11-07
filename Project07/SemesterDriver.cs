@@ -81,8 +81,7 @@ namespace Project07
         static void AddCourse()
         {
             List<Course> courseList = new List<Course>();
-            Grades courseGrades = new Grades();
-
+            
             int numOfGrades = 5;
             string i = "y";
 
@@ -115,9 +114,10 @@ namespace Project07
                     Console.WriteLine($"Grade item { x + 1}: ");
                     int input = Convert.ToInt32(Console.ReadLine());
 
-                    AddGrades(input);
+                    AddGrade(input);
+                    
 
-
+                    
                 }
 
 
@@ -139,7 +139,7 @@ namespace Project07
         }
 
 
-        static void AddGrades(int input)
+        static void AddGrade(int input)
         {
             List<int> gradeList = new List<int>();
 
@@ -153,10 +153,8 @@ namespace Project07
 
         public override string ToString()
         {
-            List<int> gradeList = new List<int>();
-
             StringBuilder gradesString = new StringBuilder();
-            foreach (int grade in gradeList)
+            foreach (int grade in grades)
             {
                 gradesString.AppendLine("Grade: " + grade);
             }
