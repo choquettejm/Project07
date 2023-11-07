@@ -13,7 +13,7 @@ namespace Project07
         public string courseDept { get; set; }
         public int courseNum { get; set; }
         public int courseSec { get; set; }
-        public List<int> grades { get; set; }
+         List<int> grades { get; set; }
 
         public Course(string department, int number, int section)
         {
@@ -21,6 +21,15 @@ namespace Project07
             courseNum = number;
             courseSec = section;
             grades = new List<int>();
+        
+        
+        }
+
+        public override string ToString()
+        {
+            string gradesString = string.Join(", ", grades);
+
+            return gradesString;
         }
 
         public void AddGrade(int input)
@@ -29,34 +38,30 @@ namespace Project07
         }
 
 
+        private double CalcAverage()
+        {
+            if (grades.Count == 0)
+            {
+                return 0; // Return 0 if the grades List is empty to avoid division by zero
+            }
 
-        //public static double CalcAverage(List<int> grades)
-        //{
-        //    if (grades.Count == 0)
-        //    {
-        //        return 0;
-        //    }
+            int sum = 0;
+            foreach (int grade in grades)
+            {
+                sum += grade;
+            }
 
-        //    int sum = 0;
-        //    foreach (int grade in grades)
-        //    {
-        //        sum += grade;
-        //    }
+            double average = (double)sum / grades.Count;
+            return average;
+        }
 
-        //    double average = (double)sum / grades.Count;
-        //    return Math.Round(average, 1);
-        //}
+        public double GetGradeAverage()
+        {
+           
+            return CalcAverage();
 
+        }
 
-        //public override string ToString()
-        //{
-        //    StringBuilder gradesString = new StringBuilder();
-        //    foreach (int grade in gradesString)
-        //    {
-        //        gradesString.AppendLine("Grade: " + grade);
-        //    }
-        //    return gradesString.ToString();
-        //}
 
     }
 }
