@@ -33,18 +33,19 @@ class SemesterDriver
         }
     }
 
+    // Grades Class and Attributes
     public class Grades
     {
         public int grade { get; set; }
+                
     }
 
 
-    //private List<int> gradeList = new List<int>();
     
 
 
-    // MAIN Method
 
+    // MAIN Method
     static void Main()
     {
 
@@ -63,17 +64,14 @@ class SemesterDriver
             currentSemester = Console.ReadLine();
         }
 
-
-
         AddCourse();
-        
-               
-                     
-        //course.ToString(studentName, currentSemester, course.Department, course.CourseNum, course.Section);
-
-        
-
+    
+        Console.WriteLine(studentName);
+        Console.WriteLine(currentSemester);
+    
     }
+
+
 
     static void AddCourse()
     {
@@ -108,10 +106,11 @@ class SemesterDriver
             Console.WriteLine("Please enter " + numOfGrades + " grades for this course:");
             for (int x = 0; x < numOfGrades; x++)
             {
+
                 Console.WriteLine($"Grade item { x + 1}: ");
                 int input = Convert.ToInt32(Console.ReadLine());
 
-               AddGrades(input);
+                AddGrades(input);
 
             }
 
@@ -123,8 +122,7 @@ class SemesterDriver
 
         }
 
-
-       
+               
         foreach (Course course in courseList)
         {
             Console.WriteLine($"{course.Department}, {course.CourseNum}, {course.Section}");
@@ -142,8 +140,6 @@ class SemesterDriver
 
         //Console.WriteLine("");
         //gradeList.ForEach(element => Console.Write($"{element} "));
-
-
 
     }
 
