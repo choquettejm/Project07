@@ -1,23 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Project07;
 
-public class Course
-{
-    //public string Name { get; set; }
-    public string courseDept { get; set; }
-    public int courseNum { get; set; }
-    public int courseSec { get; set; }
-    public List<int> Grades { get; set; }
-
-    public Course(string department, int number, int section)
-    {
-        //Name = name;
-        courseDept = department;
-        courseNum = number;
-        courseSec = section;
-        Grades = new List<int>();
-    }
-}
 
 public class Program
 {
@@ -51,7 +35,7 @@ public class Program
         {
             Console.WriteLine();
             Console.WriteLine(course.courseDept.ToUpper() + " " + course.courseNum + "-" + course.courseSec);
-            Console.WriteLine("Grades: " + string.Join(", ", course.Grades) + " (Average: " + CalculateAverage(course.Grades) + "%)");
+            Console.WriteLine("Grades: " + string.Join(", ", course.grades) + " (Average: " + CalculateAverage(course.grades) + "%)");
         }
     }
 
@@ -74,7 +58,7 @@ public class Program
         {
             Console.WriteLine("Enter grade " + i + ":");
             int grade = Convert.ToInt32(Console.ReadLine());
-            course.Grades.Add(grade);
+            course.grades.Add(grade);
         }
 
         return course;
