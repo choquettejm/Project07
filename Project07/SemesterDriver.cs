@@ -3,12 +3,18 @@ using System.Collections.Generic;
 
 public class Course
 {
-    public string Name { get; set; }
+    //public string Name { get; set; }
+    public string courseDept { get; set; }
+    public int courseNum { get; set; }
+    public int courseSec { get; set; }
     public List<int> Grades { get; set; }
 
-    public Course(string name)
+    public Course(string department, int number, int section)
     {
-        Name = name;
+        //Name = name;
+        courseDept = department;
+        courseNum = number;
+        courseSec = section;
         Grades = new List<int>();
     }
 }
@@ -20,10 +26,10 @@ public class Program
         List<Course> courses = new List<Course>();
         string studentName, semester;
 
-        Console.WriteLine("Enter student name:");
+        Console.Write("What is the student name: ");
         studentName = Console.ReadLine();
 
-        Console.WriteLine("Enter semester:");
+        Console.Write("What is the current semester: ");
         semester = Console.ReadLine();
 
         bool addMoreCourses = true;
@@ -44,18 +50,25 @@ public class Program
         foreach (Course course in courses)
         {
             Console.WriteLine();
-            Console.WriteLine("Course: " + course.Name);
+            Console.WriteLine(course.courseDept.ToUpper() + " " + course.courseNum + "-" + course.courseSec);
             Console.WriteLine("Grades: " + string.Join(", ", course.Grades) + " (Average: " + CalculateAverage(course.Grades) + "%)");
         }
     }
 
     public static Course AddCourse()
     {
-        Console.WriteLine();
-        Console.WriteLine("Enter course name:");
-        string courseName = Console.ReadLine();
+        Console.WriteLine("");
+        Console.WriteLine("Please enter course information:");
+        Console.Write("Department (i.e., CSCI, HIST): ");
+        string Department = Console.ReadLine();
 
-        Course course = new Course(courseName);
+        Console.Write("Course Number (i.e., 1250, 1200): ");
+        int Number = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Course Section (i.e., 001, 901): ");
+        int Section = Convert.ToInt32(Console.ReadLine());
+
+        Course course = new Course(Department, Number, Section);
 
         for (int i = 1; i <= 5; i++)
         {
