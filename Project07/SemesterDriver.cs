@@ -148,15 +148,15 @@ class SemesterDriver
     }
 
 
-    public override string ToString(string gradeString)
-    {
-        StringBuilder gradesString = new StringBuilder();
-        foreach (int grade in gradesString)
-        {
-            gradesString.AppendLine("Grade: " + grade);
-        }
-        return gradesString.ToString();
-    }
+    //public override string ToString(string gradeString)
+    //{
+    //    StringBuilder gradesString = new StringBuilder();
+    //    foreach (int grade in gradesString)
+    //    {
+    //        gradesString.AppendLine("Grade: " + grade);
+    //    }
+    //    return gradesString.ToString();
+    //}
 
 
 
