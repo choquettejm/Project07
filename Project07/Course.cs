@@ -40,11 +40,7 @@ namespace Project07
 
         private double CalcAverage()
         {
-            if (grades.Count == 0)
-            {
-                return 0; // Return 0 if the grades List is empty to avoid division by zero
-            }
-
+            
             int sum = 0;
             foreach (int grade in grades)
             {

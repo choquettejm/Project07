@@ -68,24 +68,5 @@ public class Program
 
         return course;
     }
-
-    
-    //public static double CalcAverage(List<int> grades)
-    //{
-    //    if (grades.Count == 0)
-    //    {
-    //        return 0;
-    //    }
-
-    //    int sum = 0;
-    //    foreach (int grade in grades)
-    //    {
-    //        sum += grade;
-    //    }
-
-    //    double average = (double)sum / grades.Count;
-    //    return Math.Round(average, 1);
-    //}
-
-    
+           
 }
