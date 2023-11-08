@@ -13,7 +13,7 @@ namespace Project07
         public string courseDept { get; set; }
         public int courseNum { get; set; }
         public int courseSec { get; set; }
-         List<int> grades { get; set; }
+        private List<int> grades { get; set; }
 
         public Course(string department, int number, int section)
         {
