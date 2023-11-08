@@ -36,7 +36,7 @@ public class Program
         foreach (Course course in courses)
         {
             Console.WriteLine();
-            Console.WriteLine(course.courseDept.ToUpper() + " " + course.courseNum + "-" + String.Format("{0:000}", course.courseSec));
+            Console.WriteLine(course.courseDept.ToUpper() + " " + String.Format("{0:0000}", course.courseNum) + "-" + String.Format("{0:000}", course.courseSec));
             Console.WriteLine("Grades: " + course.ToString());
             Console.WriteLine("Average: " + course.GetGradeAverage()  + "%") ;
             Console.WriteLine("-------------------------------");
@@ -55,7 +55,7 @@ public class Program
 
         Console.Write("Course Section (i.e., 001, 901): ");
         int Section = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine(Department.ToUpper() + " " + Number + "-" + String.Format("{0:000}", Section) + " has been added");
+        Console.WriteLine(Department.ToUpper() + " " + String.Format("{0:0000}", Number) + "-" + String.Format("{0:000}", Section) + " has been added");
         Console.WriteLine("");
 
         Course course = new Course(Department, Number, Section);
