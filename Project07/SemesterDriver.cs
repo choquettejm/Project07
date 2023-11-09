@@ -16,15 +16,15 @@ public class Program
         Console.Write("What is the current semester: ");
         semester = Console.ReadLine();
 
-        bool addMoreCourses = true;
-        while (addMoreCourses)
+        bool addCourses = true;
+        while (addCourses)
         {
             Course course = AddCourse();
             courses.Add(course);
 
             Console.WriteLine("Add another course? (Y/N)");
             string response = Console.ReadLine();
-            addMoreCourses = response.Equals("Y", StringComparison.OrdinalIgnoreCase);
+            addCourses = response.Equals("Y", StringComparison.OrdinalIgnoreCase);
         }
 
         Console.WriteLine();
