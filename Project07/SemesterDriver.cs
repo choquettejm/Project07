@@ -13,8 +13,21 @@ public class Program
         Console.Write("What is the student name: ");
         studentName = Console.ReadLine();
 
+        while (string.IsNullOrEmpty(studentName))
+        {
+            Console.WriteLine("Student Name can't be empty! Please Input your name");
+            studentName = Console.ReadLine();
+        }
+
         Console.Write("What is the current semester: ");
         semester = Console.ReadLine();
+
+        
+        while (string.IsNullOrEmpty(semester))
+        {
+            Console.WriteLine("the semester can't be empty! Please Input the current semester");
+            semester = Console.ReadLine();
+        }
 
         bool addCourses = true;
         while (addCourses)
@@ -50,11 +63,44 @@ public class Program
         Console.Write("Department (i.e., CSCI, HIST): ");
         string Department = Console.ReadLine();
 
+        while (string.IsNullOrEmpty(Department))
+        {
+            Console.WriteLine("the Department can't be empty! Please Input the department");
+            Department = Console.ReadLine();
+        }
+
         Console.Write("Course Number (i.e., 1250, 1200): ");
-        int Number = Convert.ToInt32(Console.ReadLine());
+        var numberAsString = Console.ReadLine();
+
+        while (string.IsNullOrEmpty(numberAsString))
+        {
+            Console.WriteLine("the Couse Number can't be empty! Please Input the Course Number");
+            numberAsString = Console.ReadLine();
+        }
+
+        int Number;
+        while (!int.TryParse(numberAsString, out Number))
+        {
+            Console.WriteLine("the Course Number can't contain letters! Please Input the Course Number");
+            numberAsString = Console.ReadLine();
+        }
 
         Console.Write("Course Section (i.e., 001, 901): ");
-        int Section = Convert.ToInt32(Console.ReadLine());
+        var sectionAsString = Console.ReadLine();
+
+        while (string.IsNullOrEmpty(sectionAsString))
+        {
+            Console.WriteLine("the Course Section can't be empty! Please Input the Course Section");
+            sectionAsString = Console.ReadLine();
+        }
+
+        int Section;
+        while (!int.TryParse(sectionAsString, out Section))
+        {
+            Console.WriteLine("the Course Section can't contain letters! Please Input the Course Section");
+            sectionAsString = Console.ReadLine();
+        }
+
         Console.WriteLine(Department.ToUpper() + " " + String.Format("{0:0000}", Number) + "-" + String.Format("{0:000}", Section) + " has been added");
         Console.WriteLine("");
 
@@ -63,9 +109,27 @@ public class Program
         for (int i = 1; i <= 5; i++)
         {
             Console.WriteLine("Enter grade " + i + ":");
-            int grade = Convert.ToInt32(Console.ReadLine());
+            string gradeAsString = Console.ReadLine();
+
+
+            while (string.IsNullOrEmpty(gradeAsString))
+            {
+                Console.WriteLine("Grade can't be empty! Please Input Grade " + i);
+                gradeAsString = Console.ReadLine();
+            }
+
+            int grade;
+            while (!int.TryParse(gradeAsString, out grade) || grade < 0)
+            {
+                Console.WriteLine("Grade must contain a positive number ! Please Input Grade " + i);
+                gradeAsString = Console.ReadLine();
+                        
+            }
+
+            
             course.AddGrade(grade);
             
+
         }
 
         return course;
